@@ -4,17 +4,17 @@
  * @return {Array}
  */
 var join = function(arr1, arr2) {
-    let items = arr1.concat(arr2);
+    let newArray = arr1.concat(arr2);
 
     let result = {};
 
-    for(const obj of items) {
-        if(!result[obj.id]) {
-            result[obj.id] = obj;
+    for(const item of newArray) {
+        if(!result[item.id]) {
+            result[item.id] = item;
             continue;
         } 
 
-        result[obj.id] = {...result[obj.id], ...obj};
+        result[item.id] = {...result[item.id], ...item};
     }
 
     return Object.values(result);
